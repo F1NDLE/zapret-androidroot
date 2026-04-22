@@ -1,0 +1,28 @@
+#!/system/bin/sh
+MODDIR="/data/adb/modules/zapret"
+SCRIPTS="$MODDIR/scripts"
+
+stop_all() {
+    killall nfqws >/dev/null 2>&1
+    iptables -t mangle -S POSTROUTING 2>/dev/null | grep "NFQUEUE" | sed 's/-A/-D/' | while read line; do
+        iptables -t mangle $line >/dev/null 2>&1
+    done
+}
+
+case "$1" in
+    --zap)
+        sh "$SCRIPTS/action_zp.sh"
+        ;;
+    --stop)
+        stop_all
+        ;;
+    --status)
+        pgrep nfqws > /dev/null && echo "РАБОТАЕТ" || echo "ВЫКЛ"
+        ;;
+    *)
+        echo "zapretfin --zap | --stop | --status
+        (--zap - запуск
+        --stop - остановка запрета
+        --status - проверка статуса запрет)"
+        ;;
+esac

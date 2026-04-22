@@ -39,3 +39,9 @@ su
 zapretfin --zap     # Запустить Zapret
 zapretfin --stop    # Остановить всё
 zapretfin --status  # Проверить статус
+
+
+### Credits
+
+ZAPRET developer
+imMALWARE

@@ -1,0 +1,8 @@
+id=unlocker_zrpb
+name=Разблокировщик сервисов в РФ
+version=1
+versionCode=1
+author=финдл | тг канал: t.me/F1NDLE_cn
+banner=https://raw.githubusercontent.com/F1NDLE/RU_AI_UNLOCKER/refs/heads/main/banner.png
+description=Разблокировка зарубежных сервисов заблокированных под санкциями 
+updateJson=https://raw.githubusercontent.com/F1NDLE/RU_AI_UNLOCKER/refs/heads/main/update.json
